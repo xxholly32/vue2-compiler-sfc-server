@@ -1,7 +1,6 @@
 import express from 'express'
 import { parse, compileTemplate, compileScript, compileStyle } from '@vue/compiler-sfc'
 import bodyParser from 'body-parser'
-import less from 'less'
 const app = express()
 
 var allowCrossDomain = function (req, res, next) {
@@ -61,5 +60,5 @@ app.get('/', function(req, res) {
   res.send('hello world');
 });
 
-app.listen(4000)
+app.listen(process.env.PORT ||4000)
 console.log('listening on port 4000')
